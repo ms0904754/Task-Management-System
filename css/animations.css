@@ -1,0 +1,149 @@
+/* animations.css */
+/* ======================
+   ENTRANCE ANIMATIONS 
+   ====================== */
+.slide-in-left {
+    animation: slideInLeft 0.5s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.slide-in-right {
+    animation: slideInRight 0.5s ease-out forwards;
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.slide-in-bottom {
+    animation: slideInBottom 0.5s ease-out forwards;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInBottom {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======================
+   HOVER EFFECTS 
+   ====================== */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.task-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* ======================
+   SPECIAL EFFECTS 
+   ====================== */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* ======================
+   MODAL TRANSITIONS 
+   ====================== */
+.modal {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-content {
+    transition: transform 0.3s ease;
+    transform: translateY(-20px);
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+/* ======================
+   PRIORITY PULSE EFFECTS 
+   ====================== */
+.high-priority {
+    animation: pulseWarning 1.5s infinite;
+}
+
+@keyframes pulseWarning {
+    0% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 82, 82, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 82, 82, 0); }
+}
+
+/* ======================
+   TASK COMPLETION EFFECTS 
+   ====================== */
+.task-complete {
+    animation: completeTask 0.6s ease-out forwards;
+}
+
+@keyframes completeTask {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+    100% { transform: scale(0); opacity: 0; }
+}
+
+/* ======================
+   DRAG AND DROP FEEDBACK 
+   ====================== */
+.column.highlight {
+    animation: highlightColumn 1s infinite alternate;
+}
+
+@keyframes highlightColumn {
+    from { background-color: rgba(74, 111, 165, 0.1); }
+    to { background-color: rgba(74, 111, 165, 0.3); }
+}
+
+.task-card.dragging {
+    opacity: 0.5;
+    transform: scale(0.95);
+    transition: all 0.2s ease;
+}
